@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = {"http://localhost:3000"})
 @Controller
 public class JobController {
     @Autowired private JobRepository jobRepository;

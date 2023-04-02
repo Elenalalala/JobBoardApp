@@ -31,3 +31,17 @@ build/
 
 ### VS Code ###
 .vscode/
+
+*.DS_Store
+*.sw?
+.#*
+*#
+*~
+bin
+build
+target
+dependency-reduced-pom.xml
+*.sublime-*
+/scratch
+.gradle
+README.html
