@@ -4,11 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac300cb3-fdd0-4693-87c7-0c9fa98b5ad5" name="Changes" comment="" />
+    <list default="true" id="ac300cb3-fdd0-4693-87c7-0c9fa98b5ad5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/complete/src/main/java/pojo/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/complete/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/complete/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/initial/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/initial/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2NnAPjEDXLUVI3njzwa4jUEg0TI" />
   <component name="ProjectViewState">
@@ -20,14 +32,35 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/lala/Downloads/gs-spring-boot-main",
+    "last_opened_file_path": "/Users/lala/Desktop/JobBoardApp/Backend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="JobBoardApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="JobBoardApp" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -37,6 +70,8 @@
       <option name="presentableId" value="Default" />
       <updated>1680289449645</updated>
       <workItem from="1680289451040" duration="370000" />
+      <workItem from="1680310833451" duration="5000" />
+      <workItem from="1680310853980" duration="2518000" />
     </task>
     <servers />
   </component>
