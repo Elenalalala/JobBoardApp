@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.3",
+    "react-native-elements": "^3.4.3",
+    "react-redux": "^8.0.5",
+    "redux": "^4.2.1"
+  }
+}

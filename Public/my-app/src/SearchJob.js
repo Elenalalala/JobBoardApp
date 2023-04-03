@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import DropDown from "./DropDown";
 
 function SearchJob() {
   const [text, setText] = useState("");
@@ -20,7 +21,7 @@ function SearchJob() {
 
       const data = await response.json();
       console.log(data);
-      setCards([...cards, data]);
+      setCards([...cards, ...data]);
     } catch (error) {
       console.error("Error fetching job data:", error);
     }
@@ -37,10 +38,12 @@ function SearchJob() {
         type="text"
         value={text}
         onChange={handleInputChange}
+        placeholder="Search Job"
       />
       <button className="search" onClick={searchForJob}>
         Search
       </button>
+      <DropDown dataSource={cards} />
     </div>
   );
 }
