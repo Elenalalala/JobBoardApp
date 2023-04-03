@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteFromList } from "./jobSlice";
+import WageGraph from "./WageGraph";
 
 function JobCard(job) {
   console.log("jobCard recieved:", job);
@@ -29,6 +30,7 @@ function JobCard(job) {
       >
         Delete X
       </button>
+      <WageGraph></WageGraph>
     </div>
   );
 }
