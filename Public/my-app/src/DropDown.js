@@ -1,24 +1,27 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { addSelected } from "./jobSlice";
 
 function DropDown(props) {
   const list = props.dataSource;
   const dispatch = useDispatch();
-  const [isChecked, setIsChecked] = useState(false);
-
-  console.log(list);
-  const handleSelection = () => {
-    setIsChecked(!isChecked);
+  // console.log(list);
+  const handleSelection = (item) => {
+    dispatch(addSelected(item));
   };
 
   const listItem = list?.map((item) => {
+    // console.log("item start" + item.occTitle);
     return (
-      <input
-        type="checkbox"
-        checked={isChecked}
-        value={item.occTitle}
-        onChange={handleSelection}
-      />
+      <div
+        key={item.id}
+        name={item.occTitle}
+        onClick={(e) => {
+          handleSelection(item);
+        }}
+      >
+        {item.occTitle}
+      </div>
     );
   });
   return (
