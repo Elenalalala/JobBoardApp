@@ -14,19 +14,9 @@ export const jobSlice = createSlice({
       },
       prepare(items) {
         return {
-          // payload: {
-          //   id,
-          //   title,
-          //   amean,
-          // },
           payload: items,
         };
       },
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
-      // state.selected = [...state.selected, action.payload];
     },
     // deleteSelected: (state, action) => {
     //   const index = state.selected.findIndex(
@@ -40,7 +30,7 @@ export const jobSlice = createSlice({
     //   }
     // },
 
-    addToList: (state, action) => {
+    addToList: (state) => {
       // Redux Toolkit allows us to write "mutating" logic in reducers. It
       // doesn't actually mutate the state because it uses the Immer library,
       // which detects changes to a "draft state" and produces a brand new
@@ -49,13 +39,17 @@ export const jobSlice = createSlice({
       state.selected = [];
       console.log("inList:", state.inList);
     },
+
     deleteFromList: (state, action) => {
       const index = state.inList.findIndex(
         (job) => job.id === action.payload.id
       );
+      console.log("deleteFromList: " + index, action);
       if (index >= 0) {
         let newList = [...state.inList];
         newList.splice(index, 1);
+        state.inList = newList;
+        console.log("newList###: ", state.inList);
       } else {
         console.warn("can't find the job item to remove: " + action.id);
       }
