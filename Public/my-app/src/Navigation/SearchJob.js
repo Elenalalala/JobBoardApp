@@ -53,6 +53,12 @@ function SearchJob() {
   const handleInputClick = (event) => {
     dispatch(toggleDropDown(true));
   };
+
+  const handlePressEnter = (event) => {
+    if (event.key === "Enter") {
+      searchForJob();
+    }
+  };
   useEffect(() => {}, [isVisible]);
 
   return (
@@ -64,6 +70,7 @@ function SearchJob() {
           value={text}
           onChange={handleInputChange}
           onClick={handleInputClick}
+          onKeyDown={handlePressEnter}
           placeholder="Search Job"
         />
         {isVisible && (
