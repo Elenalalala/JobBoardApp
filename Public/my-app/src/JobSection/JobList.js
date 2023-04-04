@@ -8,8 +8,8 @@ function JobList() {
     return <JobCard key={item.id} props={item} />;
   });
   return (
-    <div className="job-list">
-      <ul>{jobItem}</ul>
+    <div className="job_list">
+      <ul>{jobItem.reverse()}</ul>
     </div>
   );
 }

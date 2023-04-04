@@ -1,3 +1,7 @@
+:root {
+  --button-bg-color: rgb(255, 99, 132);
+}
+
 .App {
   text-align: center;
 }

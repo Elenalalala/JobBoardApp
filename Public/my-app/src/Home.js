@@ -1,6 +1,6 @@
 import React from "react";
-import JobList from "./JobList";
-import Header from "./Header";
+import JobList from "./JobSection/JobList";
+import Header from "./Navigation/Header";
 
 function Home() {
   return (

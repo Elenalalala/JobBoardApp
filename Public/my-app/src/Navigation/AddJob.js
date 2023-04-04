@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addToList } from "./jobSlice";
+import { addToList } from "../Data/jobSlice";
+import "./AddJob.css";
 
 function AddJob() {
   const dispatch = useDispatch();
