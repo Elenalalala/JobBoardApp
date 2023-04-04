@@ -16,8 +16,8 @@ function SearchJob() {
   async function searchForJob() {
     //if input isn't empty or null
     if (text) {
-      //reset the card to prevent adds-on
-      setCards([]);
+      // //reset the card to prevent adds-on
+      // setCards([]);
       //send http request to get the jobs with input title
       try {
         const response = await fetch(

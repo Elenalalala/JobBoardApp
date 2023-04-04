@@ -26,20 +26,29 @@ ChartJS.register(
 function WageGraph(job) {
   //   const jobList = useSelector((state) => state.jobCollection.inList);
   const jobInfo = job.props;
-  const fiveYears = [job.props.amean];
+  const mediumFiveYears = [job.props.amedian];
+  const pct25FiveYears = [job.props.apct25];
   for (let i = 1; i < 5; i++) {
-    let nextYear = fiveYears[i - 1] * 1.03;
-    fiveYears.push(nextYear);
+    let nextYear = mediumFiveYears[i - 1] * 1.03;
+    let nextYearpct = pct25FiveYears[i - 1] * 1.03;
+    mediumFiveYears.push(nextYear);
+    pct25FiveYears.push(nextYearpct);
   }
   const labels = ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"];
   let data = {
     labels,
     datasets: [
       {
-        label: jobInfo.occTitle,
-        data: fiveYears,
+        label: "Annual Median",
+        data: mediumFiveYears,
         borderColor: "rgb(255, 99, 132)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",
+      },
+      {
+        label: "Annual 25th Percentile",
+        data: pct25FiveYears,
+        borderColor: "rgb(75, 192, 192)",
+        backgroundColor: "rgb(75, 192, 192, 0.5)",
       },
     ],
   };

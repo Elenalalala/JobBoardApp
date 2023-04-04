@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { loadState, saveState } from "../localStorage";
 
 export const jobSlice = createSlice({
   name: "jobs",
@@ -6,12 +7,19 @@ export const jobSlice = createSlice({
     selected: [],
     inList: [],
     dropDownIsVisible: false,
+    allSelectedJobs: loadState(),
   },
   reducers: {
     addSelected: {
       reducer(state, action) {
-        state.selected = [...state.selected, action.payload];
-        console.log("action:", state.selected);
+        const index = state.inList.findIndex(
+          (job) => job.id === action.payload.id
+        );
+        //if there is no existing item in the selected
+        if (index < 0) {
+          state.selected = [...state.selected, action.payload];
+          console.log("action:", state.selected);
+        }
       },
       prepare(items) {
         return {
@@ -39,6 +47,8 @@ export const jobSlice = createSlice({
       state.inList = [...state.inList, ...state.selected];
       state.selected = [];
       console.log("inList:", state.inList);
+      state.allSelectedJobs = loadState();
+      console.log("savedJobs::::::", state.allSelectedJobs.savedJobs);
     },
 
     deleteFromList: (state, action) => {

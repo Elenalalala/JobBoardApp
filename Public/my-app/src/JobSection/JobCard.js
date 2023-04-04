@@ -33,7 +33,7 @@ function JobCard(job) {
             <div className="job_title">{jobInfo.occTitle}</div>
           </div>
           <div className="annual_salary">
-            <div className="annual_salary_header">Annual Salary</div>
+            <div className="annual_salary_header">Average Annual Salary</div>
             <div className="amean">${jobInfo.amean}</div>
           </div>
         </div>
