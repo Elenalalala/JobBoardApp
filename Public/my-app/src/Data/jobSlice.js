@@ -1,13 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { loadState, saveState } from "../localStorage";
+import { loadState, saveState } from "./localStorage";
+
+//locat previous job in browser local storage
+const allSelectedJobs = loadState();
 
 export const jobSlice = createSlice({
   name: "jobs",
   initialState: {
     selected: [],
-    inList: [],
+    inList: allSelectedJobs.savedJobs,
     dropDownIsVisible: false,
-    allSelectedJobs: loadState(),
+    allSelectedJobs: allSelectedJobs.savedJobs,
   },
   reducers: {
     addSelected: {
@@ -18,7 +21,6 @@ export const jobSlice = createSlice({
         //if there is no existing item in the selected
         if (index < 0) {
           state.selected = [...state.selected, action.payload];
-          console.log("action:", state.selected);
         }
       },
       prepare(items) {
@@ -40,27 +42,19 @@ export const jobSlice = createSlice({
     // },
 
     addToList: (state) => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
       state.inList = [...state.inList, ...state.selected];
       state.selected = [];
-      console.log("inList:", state.inList);
       state.allSelectedJobs = loadState();
-      console.log("savedJobs::::::", state.allSelectedJobs.savedJobs);
     },
 
     deleteFromList: (state, action) => {
       const index = state.inList.findIndex(
         (job) => job.id === action.payload.id
       );
-      console.log("deleteFromList: " + index, action);
       if (index >= 0) {
         let newList = [...state.inList];
         newList.splice(index, 1);
         state.inList = newList;
-        console.log("newList###: ", state.inList);
       } else {
         console.warn("can't find the job item to remove: " + action.id);
       }

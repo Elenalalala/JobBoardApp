@@ -1,22 +1,19 @@
 import React, { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleDropDown } from "./Data/jobSlice";
+import { toggleDropDown } from "../Data/jobSlice";
 
-/**
- * Hook that alerts clicks outside of the passed ref
- */
+//Hook that alerts clicks outside of the passed ref
 function useOutsideAlerter(ref) {
   const isVisible = useSelector(
     (state) => state.jobCollection.dropDownIsVisible
   );
   const dispatch = useDispatch();
   useEffect(() => {
-    /**
-     * Alert if clicked on outside of element
-     */
     function handleClickOutside(event) {
+      //if the our reference isn't what we are clicking
       if (ref.current && !ref.current.contains(event.target)) {
+        //make drop down menu disappear
         if (isVisible) {
           dispatch(toggleDropDown(false));
         }

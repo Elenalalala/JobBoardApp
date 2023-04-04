@@ -5,13 +5,10 @@ import WageGraph from "./WageGraph";
 import "./JobCard.css";
 
 function JobCard(job) {
-  console.log("jobCard recieved:", job);
   const jobInfo = job.props;
-  console.log("jobInfo passsssss recieved:", jobInfo);
   const dispatch = useDispatch();
 
   const handleRemove = (removedJob) => {
-    console.log("removing object: ", removedJob);
     dispatch(deleteFromList(removedJob));
   };
 
@@ -21,7 +18,6 @@ function JobCard(job) {
         <button
           className="remove_job"
           onClick={(e) => {
-            console.log("handleRemoved:", jobInfo);
             handleRemove(jobInfo);
           }}
         >

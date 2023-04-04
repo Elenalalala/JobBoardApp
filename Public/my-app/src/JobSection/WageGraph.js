@@ -11,7 +11,6 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-import { useSelector, useDispatch } from "react-redux";
 
 ChartJS.register(
   CategoryScale,
@@ -24,10 +23,9 @@ ChartJS.register(
 );
 
 function WageGraph(job) {
-  //   const jobList = useSelector((state) => state.jobCollection.inList);
   const jobInfo = job.props;
-  const mediumFiveYears = [job.props.amedian];
-  const pct25FiveYears = [job.props.apct25];
+  const mediumFiveYears = [jobInfo.amedian];
+  const pct25FiveYears = [jobInfo.apct25];
   for (let i = 1; i < 5; i++) {
     let nextYear = mediumFiveYears[i - 1] * 1.03;
     let nextYearpct = pct25FiveYears[i - 1] * 1.03;

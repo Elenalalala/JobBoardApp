@@ -2,7 +2,7 @@ import "./App.css";
 import Home from "./Home";
 import store from "./Data/storeConfig";
 import { Provider } from "react-redux";
-import { saveState } from "./localStorage";
+import { saveState } from "./Data/localStorage";
 
 store.subscribe(() => {
   saveState({

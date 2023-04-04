@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import DropDown from "./DropDown";
 import "./SearchJob.css";
-import OutsideAlerter from "../OutsideAlerter";
+import OutsideAlerter from "./OutsideAlerter";
 import { useDispatch, useSelector } from "react-redux";
 import { addToList, toggleDropDown } from "../Data/jobSlice";
 
@@ -36,7 +36,7 @@ function SearchJob() {
         }
 
         const data = await response.json();
-        console.log(data);
+        console.log("Recieve data from:", data);
         setCards(data);
       } catch (error) {
         console.error("Error fetching job data:", error);

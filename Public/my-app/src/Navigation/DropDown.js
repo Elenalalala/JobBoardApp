@@ -2,20 +2,20 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addSelected, addToList } from "../Data/jobSlice";
 import "./DropDown.css";
-import OutsideAlerter from "../OutsideAlerter";
+import OutsideAlerter from "./OutsideAlerter";
 
 function DropDown(props) {
   const list = props.dataSource;
   const dispatch = useDispatch();
-  // console.log(list);
+
+  //update redux store with new selection
   const handleSelection = (item) => {
     dispatch(addSelected(item));
     dispatch(addToList());
   };
 
+  //populate job cards base on what's selected
   const listItem = list?.map((item) => {
-    // console.log("item start" + item.occTitle);
-
     return (
       <div
         key={item.id}
