@@ -1,0 +1,27 @@
+.search {
+  background-color: var(--button-bg-color);
+  border: none;
+  color: white;
+  padding: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 10px;
+  height: 100%;
+}
+.search_job_input {
+  margin: 0px;
+  width: 100%;
+}
+.search_bar {
+  /* width: 20%; */
+  /* margin: 10px; */
+  /* margin: auto; */
+  width: 100%;
+  margin-right: 20px;
+  position: relative;
+}
+.search_job {
+  display: flex;
+  margin: auto;
+  width: 25%;
+}
