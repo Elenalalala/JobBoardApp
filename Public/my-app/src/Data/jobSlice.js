@@ -5,6 +5,7 @@ export const jobSlice = createSlice({
   initialState: {
     selected: [],
     inList: [],
+    dropDownIsVisible: false,
   },
   reducers: {
     addSelected: {
@@ -54,10 +55,14 @@ export const jobSlice = createSlice({
         console.warn("can't find the job item to remove: " + action.id);
       }
     },
+    toggleDropDown: (state, action) => {
+      state.dropDownIsVisible = action.payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addSelected, addToList, deleteFromList } = jobSlice.actions;
+export const { addSelected, addToList, deleteFromList, toggleDropDown } =
+  jobSlice.actions;
 
 export default jobSlice.reducer;

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addSelected, addToList } from "../Data/jobSlice";
 import "./DropDown.css";
+import OutsideAlerter from "../OutsideAlerter";
 
 function DropDown(props) {
   const list = props.dataSource;

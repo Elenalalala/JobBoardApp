@@ -1,15 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DropDown from "./DropDown";
 import "./SearchJob.css";
+import OutsideAlerter from "../OutsideAlerter";
+import { useDispatch, useSelector } from "react-redux";
+import { addToList, toggleDropDown } from "../Data/jobSlice";
 
 function SearchJob() {
   const [text, setText] = useState("");
   const [cards, setCards] = useState([]);
-  const [isVisible, setIsVisible] = useState(false);
+  const isVisible = useSelector(
+    (state) => state.jobCollection.dropDownIsVisible
+  );
+  const dispatch = useDispatch();
 
   async function searchForJob() {
     //if input isn't empty or null
     if (text) {
+      //reset the card to prevent adds-on
+      setCards([]);
       //send http request to get the jobs with input title
       try {
         const response = await fetch(
@@ -35,12 +43,17 @@ function SearchJob() {
       }
     }
     //make the dropdown menu visible
-    setIsVisible(true);
+    dispatch(toggleDropDown(true));
   }
 
   const handleInputChange = (event) => {
     setText(event.target.value);
+    searchForJob();
   };
+  const handleInputClick = (event) => {
+    dispatch(toggleDropDown(true));
+  };
+  useEffect(() => {}, [isVisible]);
 
   return (
     <div className="search_job">
@@ -50,9 +63,14 @@ function SearchJob() {
           type="text"
           value={text}
           onChange={handleInputChange}
+          onClick={handleInputClick}
           placeholder="Search Job"
         />
-        {isVisible && <DropDown dataSource={cards} />}
+        {isVisible && (
+          <OutsideAlerter>
+            <DropDown dataSource={cards} />
+          </OutsideAlerter>
+        )}
       </div>
       <button className="search" onClick={searchForJob}>
         Search
